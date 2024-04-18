@@ -1,0 +1,59 @@
+{
+  "lang":"en",
+  "name":"pipeline",
+  "version":"0.0.0",
+  "spacy_version":">=3.7.4,<3.8.0",
+  "description":"",
+  "author":"",
+  "email":"",
+  "url":"",
+  "license":"",
+  "spacy_git_version":"bff8725f4",
+  "vectors":{
+    "width":0,
+    "vectors":0,
+    "keys":0,
+    "name":null,
+    "mode":"default"
+  },
+  "labels":{
+    "ner":[
+      "BALANCE DUE",
+      "BILL TO",
+      "CLIENT",
+      "CLIENT TAX ID",
+      "DATE",
+      "DATE OF ISSUE",
+      "DISCOUNT",
+      "IBAN",
+      "INVOICE NO",
+      "ITEM AMOUNT",
+      "ITEM DES",
+      "ITEM QUANTITY",
+      "ITEM RATE",
+      "ITEMS NO DESCRIPTION",
+      "ITEMS QTY UM NETPRICE NETWORTH VAT[%] GROSSWORTH",
+      "NETWORTH   VAT   GROSSWORTH   VAT[%]",
+      "NOTES",
+      "SELLER",
+      "SELLER TAX ID",
+      "SHIP MODE",
+      "SHIP TO",
+      "SHIPPING",
+      "SHOPNAME",
+      "SUB TOTAL",
+      "TERMS",
+      "TOTAL",
+      "TOTAL   NETWORTH    VAT[%]    GROSSWORTH"
+    ]
+  },
+  "pipeline":[
+    "ner"
+  ],
+  "components":[
+    "ner"
+  ],
+  "disabled":[
+
+  ]
+}

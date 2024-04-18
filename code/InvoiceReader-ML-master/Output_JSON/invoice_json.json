@@ -1,0 +1,50 @@
+{
+    "Invoice": {
+        "entities": [
+            {
+                "label": "ITEM RATE",
+                "entity": "$169.95"
+            },
+            {
+                "label": "TOTAL   NETWORTH    VAT[%]    GROSSWORTH",
+                "entity": "$1,699.48 Deposit Requested $169.95"
+            },
+            {
+                "label": "TOTAL   NETWORTH    VAT[%]    GROSSWORTH",
+                "entity": "$1,798.39 Discount -$179.84 Tax +$80.93"
+            },
+            {
+                "label": "ITEM RATE",
+                "entity": "$123.39"
+            },
+            {
+                "label": "ITEM RATE",
+                "entity": "$123.39"
+            },
+            {
+                "label": "ITEMS NO DESCRIPTION",
+                "entity": "complete job. Tax"
+            },
+            {
+                "label": "TOTAL   NETWORTH    VAT[%]    GROSSWORTH",
+                "entity": "$75.00 15 $1,125.00 +Tax"
+            },
+            {
+                "label": "TOTAL   NETWORTH    VAT[%]    GROSSWORTH",
+                "entity": "$55.00 +Tax 10 $550.00"
+            },
+            {
+                "label": "ITEMS QTY UM NETPRICE NETWORTH VAT[%] GROSSWORTH",
+                "entity": "888-123-8910 nia Date Issued 26/3/2021 Due Date 25/4/2021"
+            },
+            {
+                "label": "ITEM RATE",
+                "entity": "$1,699.48"
+            },
+            {
+                "label": "ITEMS QTY UM NETPRICE NETWORTH VAT[%] GROSSWORTH",
+                "entity": "888-123-4567"
+            }
+        ]
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "Invoice": {
+        "entities": [
+            {
+                "label": "TOTAL   NETWORTH    VAT[%]    GROSSWORTH",
+                "entity": "$ 6 750,00 $ 675,00 $ 7 425,00"
+            },
+            {
+                "label": "NETWORTH   VAT   GROSSWORTH   VAT[%]",
+                "entity": "6 750,00 675,00 7 425,00"
+            },
+            {
+                "label": "ITEMS NO DESCRIPTION",
+                "entity": "2. 24\"x24\" Top Marble White Table"
+            },
+            {
+                "label": "ITEMS QTY UM NETPRICE NETWORTH VAT[%] GROSSWORTH",
+                "entity": "3,00 each 2 000,00 6 000,00 10% 6 600,00"
+            },
+            {
+                "label": "ITEMS NO DESCRIPTION",
+                "entity": "Carnelian Marquetry Interior Thanksgiving Gift"
+            },
+            {
+                "label": "ITEMS QTY UM NETPRICE NETWORTH VAT[%] GROSSWORTH",
+                "entity": "3,00 each 250,00 750,00 10% 825,00"
+            },
+            {
+                "label": "ITEMS NO DESCRIPTION",
+                "entity": "1. SOFA SET"
+            },
+            {
+                "label": "CLIENT TAX ID",
+                "entity": "915-96-8914"
+            },
+            {
+                "label": "SELLER TAX ID",
+                "entity": "904-85-9552"
+            },
+            {
+                "label": "IBAN",
+                "entity": "GB590GER79546193089834"
+            },
+            {
+                "label": "SELLER",
+                "entity": "Miles Ltd 05464 Richard River Danielberg, MN 72871"
+            },
+            {
+                "label": "DATE OF ISSUE",
+                "entity": "09/17/2012"
+            },
+            {
+                "label": "INVOICE NO",
+                "entity": "99004300"
+            }
+        ]
+    }
+}

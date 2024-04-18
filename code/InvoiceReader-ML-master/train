@@ -1,0 +1,155 @@
+
+
+
+
+# # import os
+# # import spacy
+# # import json
+# # from spacy.training import Example
+
+# # # Directory containing training data JSON files
+# # training_data_dir = 'C:/Users/admin/Documents/imagetotext- python/Invoice/InvoiceReader-ML-master/Training_data'
+
+# # # Iterate over each JSON file in the training data directory
+# # for filename in os.listdir(training_data_dir):
+# #     if filename.endswith('.json'):
+# #         # Load JSON data
+# #         with open(os.path.join(training_data_dir, filename), 'r') as file:
+# #             data = json.load(file)
+
+# #         # Initialize a blank spaCy NER model
+# #         nlp = spacy.blank("en")
+# #         ner = nlp.add_pipe("ner")
+
+# #         # Add labels to the NER component
+# #         for item in data:
+# #             annotations = item['annotation']
+# #             for ent in annotations['entities']:
+# #                 ner.add_label(ent[2])
+
+# #         # Prepare training data
+# #         train_data = []
+# #         for entry in data:
+# #             text = entry['content']
+# #             entities = entry['annotation']['entities']
+# #             train_data.append((text, {'entities': entities}))
+
+# #         # Define training parameters
+# #         n_iter = 10
+# #         learn_rate = 0.001
+# #         dropout = 0.5
+
+# #         # Train the NER model
+# #         optimizer = nlp.begin_training()
+# #         optimizer.learn_rate = learn_rate
+# #         for i in range(n_iter):
+# #             spacy.util.fix_random_seed(1)
+# #             losses = {}
+# #             for text, annotations in train_data:
+# #                 example = Example.from_dict(nlp.make_doc(text), annotations)
+# #                 nlp.update([example], losses=losses, drop=dropout)
+# #             print(f'Iteration {i}: Losses: {losses}')
+
+# #         # Create a directory for the model output
+# #         output_dir = f'ner_models/{filename[:-5]}'  # Remove .json extension from filename
+# #         os.makedirs(output_dir, exist_ok=True)
+
+# #         # Save the trained model to the output directory
+# #         nlp.to_disk(output_dir)
+
+# #         print(f'Model trained and saved to {output_dir}')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# import cv2
+# import pytesseract
+# import spacy
+# import numpy as np
+# import json
+# import os
+
+# nlp = spacy.load("ner_model")
+# pytesseract.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
+
+# image_path = "C:/Users/admin/Documents/imagetotext- python/Invoice/InvoiceReader-ML-master/image.jpg"
+# #OCR text extraction
+# def extract_text(img, x, y, w, h):
+#     crop_img = img[y:y + h, x:x + w]
+#     text = pytesseract.image_to_string(crop_img)
+#     cleaned_text = ' '.join(text.split())
+#     return cleaned_text
+
+# def process_single_invoice_image(image_path):
+#     entities = []  
+#     image = cv2.imread(image_path)
+#     extract_and_store_entities(image, entities)
+
+# def extract_and_store_entities(image, entities):
+#     x1 = 50
+#     y1 = 10
+#     imgo = image.copy()
+#     gray = cv2.cvtColor(imgo, cv2.COLOR_BGR2GRAY)
+#     linek = np.zeros((11, 11), dtype=np.uint8)
+#     linek[5, ...] = 1
+#     x = cv2.morphologyEx(gray, cv2.MORPH_OPEN, linek, iterations=1)
+#     gray -= x
+#     gray = cv2.bitwise_not(gray)
+#     ret, thresh1 = cv2.threshold(gray, 0, 255, cv2.THRESH_OTSU | cv2.THRESH_BINARY_INV)
+
+#     while True:
+#         rect_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (x1, y1))
+#         dilation = cv2.dilate(thresh1, rect_kernel, iterations=6)
+#         contours, _ = cv2.findContours(dilation, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+#         test = len(contours)
+
+#         if test < 10:
+#             x1 -= 1
+#             y1 -= 1
+#         elif test > 30:
+#             x1 += 1
+#             y1 += 1
+#         else:
+#             break
+
+#     for cnt in contours:
+#         x, y, w, h = cv2.boundingRect(cnt)
+#         text = extract_text(imgo, x, y, w, h)
+#         doc = nlp(text)
+#         for ent in doc.ents:
+#             entities.append({"label": ent.label_, "entity": ent.text})
+
+#     output_directory = "C:/Users/admin/Documents/imagetotext- python/Invoice/InvoiceReader-ML-master/Output_JSON"
+#     output_filename = "invoice_json.json"
+    
+#     os.makedirs(output_directory, exist_ok=True)
+    
+#     output_json_file = os.path.join(output_directory, output_filename)
+#     invoice_data = {}
+#     invoice_data["Invoice"] = {"entities": entities}
+    
+#     with open(output_json_file, "w") as json_file:
+#         json.dump(invoice_data, json_file, indent=4)
+
+# process_single_invoice_image(image_path)
